@@ -23,14 +23,14 @@ public class TurtleTreasureHunt implements KeyEventDispatcher {
 
 	private void goUp() {
 		// 1. Make the tortoise move up the screen
-		Tortoise.move(10);
+		Tortoise.move(1);
 
 	}
 
 	private void goDown() {
 		// 2. make the tortoise move down the screen
 		Tortoise.turn(180);
-		Tortoise.move(10);
+		Tortoise.move(1);
 		Tortoise.turn(180);
 	}
 
@@ -38,7 +38,7 @@ public class TurtleTreasureHunt implements KeyEventDispatcher {
 		// 3. make the tortoise move left (3 lines of code)
 		// Hint: the turn() method lags more than setAngle()
 		Tortoise.turn(270);
-		Tortoise.move(10);
+		Tortoise.move(1);
 		Tortoise.turn(90);
 
 	}
@@ -46,7 +46,7 @@ public class TurtleTreasureHunt implements KeyEventDispatcher {
 	private void goRight() {
 		// 4. make the tortoise move right
 		Tortoise.turn(90);
-		Tortoise.move(10);
+		Tortoise.move(1);
 		Tortoise.turn(-90);
 	}
 
@@ -81,7 +81,7 @@ public class TurtleTreasureHunt implements KeyEventDispatcher {
 			if (tortoiseLocationY == 380) {
 
 				JOptionPane.showMessageDialog(null, "Good Job! Now that you have found the scroll it will help you!"
-						+ " The scroll says 'Go to each living thing's body in this picture and press the u button on each one of them. Only one of them is correct.' ");
+						+ " The scroll says 'Go to each parrot's body in this picture and press the u button on each one of them. Only one of them is correct.' ");
 
 			}
 		}
@@ -91,8 +91,8 @@ public class TurtleTreasureHunt implements KeyEventDispatcher {
 		int tortoiseLocationX = Tortoise.getX();
 		int tortoiseLocationY = Tortoise.getY();
 
-		if (tortoiseLocationX == 409) {
-			if (tortoiseLocationY == 109) {
+		if (tortoiseLocationX == 410) {
+			if (tortoiseLocationY == 110) {
 				JOptionPane.showMessageDialog(null,
 						"Good job! Now go back to the pirates skull and crossbones and press the tab button");
 			}
@@ -102,24 +102,29 @@ public class TurtleTreasureHunt implements KeyEventDispatcher {
 	private void tabwaspressed() {
 		int tortoiseLocationX = Tortoise.getX();
 		int tortoiseLocationY = Tortoise.getY();
-		if (tortoiseLocationX == 399) {
-			if (tortoiseLocationY == 239) {
+		if (tortoiseLocationX == 400) {
+			if (tortoiseLocationY == 240) {
 				JOptionPane.showMessageDialog(null,
 						"Amazing! You have finished the quest!");
-				private static void playTheSoundOfSuccess() {
-					AudioClip sound;
-					try {
-						sound = JApplet.newAudioClip(new File("/Users/League/Google Drive/league-sounds/me-gusta.wav").toURI().toURL());
-						sound.play();
-					} catch (MalformedURLException e) {
-						e.printStackTrace();
-					}
-				}
-
+				playTheSoundOfSuccess();
 			}
 		}
 	}
 
+	
+	private static void playTheSoundOfSuccess() {
+		AudioClip sound;
+		try {
+			sound = JApplet.newAudioClip(new File("file:///Users/League/Google%20Drive/league-sounds/homer-woohoo.wav").toURI().toURL());
+			sound.play();
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	
+	
+	
 	private void go() {
 		KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(this);
 		/*
