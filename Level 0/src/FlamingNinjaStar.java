@@ -22,9 +22,9 @@ public class FlamingNinjaStar {
 		// *15. Make some adjustments to see what other kinds of shapes you can make.
 
 		// 12. Set the robot speed to 10
-		ninja.setSpeed(20);
+		ninja.setSpeed(50);
 		// 13. Make all the code below repeat 25 times
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 200; i++) {
 
 			// 2. Turn the robot 1/8 of a circle
 			ninja.turn(45);
